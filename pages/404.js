@@ -1,7 +1,7 @@
-import errorPageStyle from "../styles/components/ErrorPage.module.scss";
+import errorPageStyle from "../src/styles/components/ErrorPage.module.scss";
 import { useRouter } from "next/router";
-import Button from "../components/elements/Button";
-import Wrapper from "../components/Layout/Wrapper";
+import Button from "../src/components/elements/Button";
+import Wrapper from "../src/components/Layout/Wrapper";
 
 export default function ErrorPage() {
 	const router = useRouter();

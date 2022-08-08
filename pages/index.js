@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import { fetchData } from "../utils/fetchData";
+import { fetchData } from "../src/utils/fetchData";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { checkLoadingError } from "../utils/checkLoadingError";
-import Title from "../components/Title";
-import MainLayout from "../components/Layout/MainLayout";
-import Wrapper from "../components/Layout/Wrapper";
-import Container from "../components/Layout/Container";
-import DatePrice from "../components/DatePrice";
-import Button from "../components/elements/Button";
+import { checkLoadingError } from "../src/utils/checkLoadingError";
+import Title from "../src/components/Title";
+import MainLayout from "../src/components/Layout/MainLayout";
+import Wrapper from "../src/components/Layout/Wrapper";
+import Container from "../src/components/Layout/Container";
+import DatePrice from "../src/components/DatePrice";
+import Button from "../src/components/elements/Button";
 
 export default function Index() {
 	const dispatch = useDispatch();

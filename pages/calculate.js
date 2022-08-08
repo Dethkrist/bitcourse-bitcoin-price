@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchData } from "../utils/fetchData";
+import { fetchData } from "../src/utils/fetchData";
 import { useRouter } from "next/router";
-import { checkLoadingError } from "../utils/checkLoadingError";
+import { checkLoadingError } from "../src/utils/checkLoadingError";
 import { useSelector } from "react-redux";
-import Wrapper from "../components/Layout/Wrapper";
-import MainLayout from "../components/Layout/MainLayout";
-import Container from "../components/Layout/Container";
-import Title from "../components/Title";
-import CalculatePage from "../components/CalculatePage";
-import Button from "../components/elements/Button";
+import Wrapper from "../src/components/Layout/Wrapper";
+import MainLayout from "../src/components/Layout/MainLayout";
+import Container from "../src/components/Layout/Container";
+import Title from "../src/components/Title";
+import CalculatePage from "../src/components/CalculatePage";
+import Button from "../src/components/elements/Button";
 
 export default function Calculate() {
 	const dispatch = useDispatch();
