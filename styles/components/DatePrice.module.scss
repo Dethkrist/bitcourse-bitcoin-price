@@ -2,8 +2,11 @@
 
 .datePrice {
 	@include flex(column, center, center);
-	margin-top: 2em;
+	margin-top: 5%;
 	animation: appearance 0.8s ease-in-out;
+	&.calculatePage {
+		animation: appearance-other 0.8s ease-out;
+	}
 }
 
 @keyframes appearance {
@@ -17,5 +20,16 @@
 	}
 	100% {
 		transform: scale(100%);
+	}
+}
+
+@keyframes appearance-other {
+	from {
+		opacity: 0;
+		transform: translateX(-100vw);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }

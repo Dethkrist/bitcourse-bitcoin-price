@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setCurrency } from "../features/currencySlice";
+import { setRate } from "../features/currencySlice";
 import Select from "./elements/select";
 import priceStyle from "../styles/components/Price.module.scss";
 import menuStyle from "../styles/components/elements/CurrencyMenu.module.scss";
@@ -11,11 +12,12 @@ export default function Price() {
 
 	const [menu, setMenu] = useState(false);
 	const [menuAnimation, setMenuAnimation] = useState(false);
-	const [price, setPrice] = useState({});
 
 	const priceUSD = useSelector((state) => state.coindata.data.bpi.USD);
 	const priceEUR = useSelector((state) => state.coindata.data.bpi.EUR);
 	const priceGBP = useSelector((state) => state.coindata.data.bpi.GBP);
+
+	const selectedRate = useSelector((state) => state.currency.rate);
 
 	const dispatch = useDispatch();
 
@@ -32,13 +34,13 @@ export default function Price() {
 
 	useEffect(() => {
 		if (selectedCurrency === "USD") {
-			setPrice(priceUSD);
+			dispatch(setRate(priceUSD));
 		}
 		if (selectedCurrency === "EUR") {
-			setPrice(priceEUR);
+			dispatch(setRate(priceEUR));
 		}
 		if (selectedCurrency === "GBP") {
-			setPrice(priceGBP);
+			dispatch(setRate(priceGBP));
 		}
 	}, [selectedCurrency]);
 
@@ -93,7 +95,7 @@ export default function Price() {
 	};
 
 	const roundRate = () => {
-		const roundedValue = Math.round(price.rate_float * 100) / 100;
+		const roundedValue = Math.round(selectedRate.rate_float * 100) / 100;
 		return roundedValue.toLocaleString("en-US");
 	};
 

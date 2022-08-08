@@ -1,20 +1,20 @@
 import { useEffect } from "react";
-import { fetchData } from "../utils/fetchData";
 import { useDispatch } from "react-redux";
+import { fetchData } from "../utils/fetchData";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 import { checkLoadingError } from "../utils/checkLoadingError";
-import Title from "../components/Title";
-import MainLayout from "../components/Layout/MainLayout";
+import { useSelector } from "react-redux";
 import Wrapper from "../components/Layout/Wrapper";
+import MainLayout from "../components/Layout/MainLayout";
 import Container from "../components/Layout/Container";
-import DatePrice from "../components/DatePrice";
+import Title from "../components/Title";
+import CalculatePage from "../components/CalculatePage";
 import Button from "../components/elements/Button";
 
-export default function Index() {
+export default function Calculate() {
 	const dispatch = useDispatch();
-
 	const router = useRouter();
+
 	const isLoading = useSelector((state) => state.coindata.isLoading);
 	const isError = useSelector((state) => state.coindata.isError);
 
@@ -30,16 +30,16 @@ export default function Index() {
 	};
 
 	const goToPage = () => {
-		router.push("/calculate");
+		router.push("/");
 	};
 
 	return (
 		<Wrapper>
-			<MainLayout title="Current price">
+			<MainLayout title="Calculate">
 				<Container>
 					<Title />
-					{checkLoadingError(isLoading, isError, <DatePrice />)}
-					<Button onClick={goToPage}>Calculate</Button>
+					{checkLoadingError(isLoading, isError, <CalculatePage />)}
+					<Button onClick={goToPage}>Main Page</Button>
 				</Container>
 			</MainLayout>
 		</Wrapper>

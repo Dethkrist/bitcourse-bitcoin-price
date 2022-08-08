@@ -1,0 +1,32 @@
+@import "../mixins.scss";
+@import "../templates.scss";
+.converter {
+	@include flex(column, center, center);
+	gap: 2em;
+	animation: appearance 0.8s ease-in-out;
+}
+
+.box {
+	@include flex(row, center, center);
+	gap: 0.5em;
+	padding: 0.2em;
+	position: relative;
+	@extend %standard-border;
+	height: 3em;
+	width: 18em;
+}
+
+.label {
+	padding-right: 1em;
+}
+
+@keyframes appearance {
+	from {
+		opacity: 0;
+		transform: translateX(100vw);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

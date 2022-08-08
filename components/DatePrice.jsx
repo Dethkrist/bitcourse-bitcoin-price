@@ -1,17 +1,21 @@
-import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import Updated from "./Updated";
 import datePriceStyle from "../styles/components/DatePrice.module.scss";
 import Price from "./Price";
-import Loader from "./elements/Loader";
 
 export default function DatePrice() {
-	const isLoading = useSelector((state) => state.coindata.isLoading);
-	const isError = useSelector((state) => state.coindata.isError);
+	const router = useRouter();
 
-	if (isLoading) return <Loader />;
-	if (isError) return <h1>Error</h1>;
+	const setAnimation = () => {
+		if (router.pathname === "/calculate") {
+			return `${datePriceStyle.datePrice} ${datePriceStyle.calculatePage}`;
+		} else {
+			return datePriceStyle.datePrice;
+		}
+	};
+
 	return (
-		<div className={datePriceStyle.datePrice}>
+		<div className={setAnimation()}>
 			<Updated />
 			<Price />
 		</div>

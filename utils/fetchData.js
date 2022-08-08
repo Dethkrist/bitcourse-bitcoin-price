@@ -1,8 +1,4 @@
-import {
-	setIsLoading,
-	setIsError,
-	setData,
-} from "../../features/coindataSlice";
+import { setIsLoading, setIsError, setData } from "../features/coindataSlice";
 import { API_URL } from "./url";
 
 export const fetchData = async (dispatch) => {

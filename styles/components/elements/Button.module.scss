@@ -3,9 +3,9 @@
 
 .button {
 	position: relative;
-	margin-top: 5rem;
+	margin-top: 15vh;
 	background: transparent;
-	border: 2px solid #fff;
+	@extend %standard-border;
 	width: 10rem;
 	height: 4rem;
 	font-size: 20px;
