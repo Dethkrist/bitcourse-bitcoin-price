@@ -1,0 +1,74 @@
+.area {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 0;
+}
+.bitcoins {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.logo {
+	position: absolute;
+	display: block;
+	background: url("../../assets/currency_bitcoin.svg");
+	width: 64px;
+	height: 64px;
+	opacity: 0.3;
+	animation: animate 25s linear infinite;
+	top: -10%;
+	&:nth-child(1) {
+		left: 10%;
+		animation-delay: 0s;
+	}
+	&:nth-child(2) {
+		left: 25%;
+		animation-delay: 12s;
+	}
+	&:nth-child(3) {
+		left: 40%;
+		animation-delay: 20s;
+	}
+	&:nth-child(4) {
+		left: 55%;
+		animation-delay: 16s;
+	}
+	&:nth-child(5) {
+		left: 70%;
+		animation-delay: 10s;
+	}
+	&:nth-child(6) {
+		left: 30%;
+		animation-delay: 6s;
+	}
+	&:nth-child(7) {
+		left: 15%;
+		animation-delay: 18s;
+	}
+	&:nth-child(8) {
+		left: 85%;
+		animation-delay: 4s;
+	}
+	&:nth-child(9) {
+		left: 60%;
+		animation-delay: 23s;
+	}
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: translateY(1000px) rotate(720deg);
+		opacity: 0;
+	}
+}

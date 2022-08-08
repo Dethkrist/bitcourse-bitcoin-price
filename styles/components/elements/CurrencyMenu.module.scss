@@ -1,0 +1,28 @@
+@import "../../mixins.scss";
+
+.menu {
+	position: absolute;
+	top: 0;
+	left: 105%;
+	background: transparent;
+	border: 2px solid #fff;
+	ul {
+		color: #000;
+		@include flex(column, center, center);
+		li {
+			button {
+				width: 100%;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				font-size: 1.5rem;
+				color: #fff;
+				padding: 0.5em;
+				&:hover {
+					background: #fff;
+					color: #000;
+				}
+			}
+		}
+	}
+}

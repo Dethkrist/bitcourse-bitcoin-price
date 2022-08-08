@@ -1,0 +1,12 @@
+@import "../mixins.scss";
+
+.price {
+	@include flex(row, center, center);
+	gap: 2em;
+	position: relative;
+}
+
+.number {
+	font-family: "Roboto condensed";
+	font-size: 3rem;
+}

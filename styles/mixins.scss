@@ -1,0 +1,17 @@
+@mixin flex($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin bitcoinelements($color, $top, $left, $height, $border, $radius) {
+	content: "";
+	position: absolute;
+	background: $color;
+	top: $top;
+	left: $left;
+	height: $height;
+	border: $border solid $color;
+	border-radius: $radius;
+}

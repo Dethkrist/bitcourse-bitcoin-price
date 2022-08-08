@@ -1,0 +1,7 @@
+@import "../mixins.scss";
+
+.container {
+	margin-top: 10%;
+	@include flex(column, center, center);
+	width: 80vw;
+}

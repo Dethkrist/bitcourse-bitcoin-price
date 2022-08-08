@@ -1,0 +1,81 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+@import "../templates.scss";
+
+.title {
+	font-size: 6rem;
+	font-family: "Roboto Condensed";
+	animation: appearance 0.8s ease-in-out 0s forwards;
+	text-shadow: 2px 2px 10px black;
+	.course {
+		display: inline-block;
+		color: #d70909;
+		@extend %transition-regular;
+		&:hover {
+			animation: text-hover 0.5s ease-in-out;
+			color: #ff0000;
+		}
+	}
+	.b {
+		display: inline-block;
+		position: relative;
+		font-size: 1.3em;
+		@extend %transition-regular;
+		&::before {
+			@include bitcoinelements(#fff, 0.1em, 0.1em, 0.9em, 0.04em, 15px);
+			@extend %transition-regular;
+		}
+		&::after {
+			@include bitcoinelements(#fff, 0.1em, 0.35em, 0.9em, 0.04em, 15px);
+			@extend %transition-regular;
+		}
+		&:hover {
+			color: $hovercolor;
+			animation: rotate-text 0.5s ease-in-out;
+
+			&::before {
+				background: $hovercolor;
+				border-color: $hovercolor;
+			}
+			&::after {
+				background: $hovercolor;
+				border-color: $hovercolor;
+			}
+		}
+	}
+}
+
+@keyframes text-hover {
+	0% {
+		transform: scale(100%);
+	}
+	50% {
+		transform: scale(90%);
+	}
+	100% {
+		transform: scale(100%);
+	}
+}
+
+@keyframes rotate-text {
+	0% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		transform: rotateY(45deg);
+	}
+	100% {
+		transform: rotateY(0deg);
+	}
+}
+
+@keyframes appearance {
+	from {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
