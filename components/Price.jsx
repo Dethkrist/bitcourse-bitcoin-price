@@ -22,17 +22,12 @@ export default function Price() {
 		(state) => state.currency.selectedCurrency
 	);
 
-	useEffect(() => {
-		const checkIfClickedOutside = (e) => {
-			if (menu && ref.current && !ref.current.contains(e.target)) {
-				setMenu(false);
-			}
-		};
-		document.addEventListener("mousedown", checkIfClickedOutside);
-		return () => {
+	const checkIfClickedOutside = (e) => {
+		if (menu && ref.current && !ref.current.contains(e.target)) {
+			setMenu(false);
 			document.removeEventListener("mousedown", checkIfClickedOutside);
-		};
-	}, [menu]);
+		}
+	};
 
 	useEffect(() => {
 		if (selectedCurrency === "USD") {
@@ -54,6 +49,27 @@ export default function Price() {
 		}
 	};
 
+	const renderMenu = () => {
+		if (menu) {
+			document.addEventListener("mousedown", checkIfClickedOutside);
+			return (
+				<div className={menuStyle.menu}>
+					<ul onClick={(e) => selectCurrency(e)}>
+						<li>
+							<button value="USD">USD</button>
+						</li>
+						<li>
+							<button value="EUR">EUR</button>
+						</li>
+						<li>
+							<button value="GBP">GBP</button>
+						</li>
+					</ul>
+				</div>
+			);
+		}
+	};
+
 	const selectCurrency = (e) => {
 		dispatch(setCurrency(e.target.value));
 		setMenu(false);
@@ -67,22 +83,10 @@ export default function Price() {
 	return (
 		<div className={priceStyle.price}>
 			<h3 className={priceStyle.number}>{roundRate()}</h3>
-			<Select onClick={showMenu}>{selectedCurrency}</Select>
-			{menu ? (
-				<div ref={ref} className={menuStyle.menu}>
-					<ul onClick={(e) => selectCurrency(e)}>
-						<li>
-							<button value="USD">USD</button>
-						</li>
-						<li>
-							<button value="EUR">EUR</button>
-						</li>
-						<li>
-							<button value="GBP">GBP</button>
-						</li>
-					</ul>
-				</div>
-			) : null}
+			<div ref={ref}>
+				<Select onClick={showMenu}>{selectedCurrency}</Select>
+				{renderMenu()}
+			</div>
 		</div>
 	);
 }
