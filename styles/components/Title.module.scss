@@ -3,7 +3,7 @@
 @import "../templates.scss";
 
 .title {
-	font-size: 6rem;
+	font-size: 6em;
 	font-family: "Roboto Condensed";
 	animation: appearance 0.8s ease-in-out 0s forwards;
 	text-shadow: 2px 2px 10px black;
@@ -22,11 +22,11 @@
 		font-size: 1.3em;
 		@extend %transition-regular;
 		&::before {
-			@include bitcoinelements(#fff, 0.1em, 0.1em, 0.9em, 0.04em, 15px);
+			@include bitcoinelements(#fff, 0.1em, 0.1em, 1em, 0.04em, 15px);
 			@extend %transition-regular;
 		}
 		&::after {
-			@include bitcoinelements(#fff, 0.1em, 0.35em, 0.9em, 0.04em, 15px);
+			@include bitcoinelements(#fff, 0.1em, 0.35em, 1em, 0.04em, 15px);
 			@extend %transition-regular;
 		}
 		&:hover {

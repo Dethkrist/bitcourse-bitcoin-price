@@ -1,13 +1,12 @@
 @import "../mixins.scss";
 
 .container {
-	margin-top: 10%;
+	margin-top: 5em;
 	@include flex(column, center, center);
 	width: 80vw;
 }
 
 .rowContainer {
-	margin-top: 0%;
 	@include flex(row, center, flex-end);
 	gap: 10vw;
 	width: 80vw;

@@ -1,3 +1,4 @@
+import Error from "../components/elements/Error";
 import Loader from "../components/elements/Loader";
 
 export const checkLoadingError = (isLoading, isError, Component) => {
@@ -5,7 +6,7 @@ export const checkLoadingError = (isLoading, isError, Component) => {
 		return <Loader />;
 	}
 	if (isError) {
-		return <h1>Error</h1>;
+		return <Error />;
 	} else {
 		return Component;
 	}

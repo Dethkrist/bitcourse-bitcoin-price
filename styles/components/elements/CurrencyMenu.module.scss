@@ -25,6 +25,7 @@
 				color: #fff;
 				padding: 0.5em;
 				&:hover {
+					outline: 0.5px solid #fff;
 					background: #fff;
 					color: $background;
 				}

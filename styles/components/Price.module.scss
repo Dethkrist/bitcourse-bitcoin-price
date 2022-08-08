@@ -1,6 +1,7 @@
 @import "../mixins.scss";
 
 .price {
+	margin-top: 1.5em;
 	@include flex(row, center, center);
 	gap: 10%;
 	position: relative;

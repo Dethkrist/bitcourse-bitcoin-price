@@ -1,18 +1,22 @@
 @import "../../templates.scss";
 @import "../../variables.scss";
+@import "../../mixins.scss";
 
 .button {
 	position: relative;
-	margin-top: 15vh;
+	margin-top: 20vh;
 	background: transparent;
 	@extend %standard-border;
+	@include flex(column, center, center);
 	width: 10rem;
 	height: 4rem;
+	box-sizing: border-box;
 	font-size: 20px;
 	text-transform: uppercase;
 	cursor: pointer;
 	div {
 		@extend %transition-regular;
+		outline: 0.5px solid #fff;
 		position: absolute;
 		width: 0;
 		height: 100%;
@@ -23,9 +27,8 @@
 	}
 	p {
 		position: absolute;
-		margin-left: 1em;
-		top: 0;
-		left: 0;
+		top: auto;
+		left: auto;
 		z-index: 10;
 		@extend %transition-regular;
 	}
