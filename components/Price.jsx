@@ -13,6 +13,7 @@ export default function Price() {
 	const [menu, setMenu] = useState(false);
 	const [menuAnimation, setMenuAnimation] = useState(false);
 
+	const prices = useSelector((state) => state.coindata.data.bpi);
 	const priceUSD = useSelector((state) => state.coindata.data.bpi.USD);
 	const priceEUR = useSelector((state) => state.coindata.data.bpi.EUR);
 	const priceGBP = useSelector((state) => state.coindata.data.bpi.GBP);
@@ -42,7 +43,7 @@ export default function Price() {
 		if (selectedCurrency === "GBP") {
 			dispatch(setRate(priceGBP));
 		}
-	}, [selectedCurrency]);
+	}, [selectedCurrency, prices]);
 
 	const showMenu = () => {
 		if (!menu) {
