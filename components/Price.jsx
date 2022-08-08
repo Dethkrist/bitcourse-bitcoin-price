@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setCurrency } from "../features/currencySlice";
 import { setRate } from "../features/currencySlice";
-import Select from "./elements/select";
+import Select from "./elements/Select";
 import priceStyle from "../styles/components/Price.module.scss";
 import menuStyle from "../styles/components/elements/CurrencyMenu.module.scss";
 
