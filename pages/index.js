@@ -6,6 +6,7 @@ import MainLayout from "../components/Layout/MainLayout";
 import Wrapper from "../components/Layout/Wrapper";
 import Container from "../components/Layout/Container";
 import DatePrice from "../components/DatePrice";
+import Button from "../components/elements/Button";
 
 export default function Index() {
 	const dispatch = useDispatch();
@@ -27,9 +28,7 @@ export default function Index() {
 				<Container>
 					<Title />
 					<DatePrice />
-					{/* <h3>
-						{data.bpi.USD.rate} {data.bpi.USD.code}
-					</h3> */}
+					<Button>Calculate</Button>
 				</Container>
 			</MainLayout>
 		</Wrapper>

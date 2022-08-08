@@ -1,0 +1,48 @@
+@import "../../templates.scss";
+@import "../../variables.scss";
+
+.button {
+	position: relative;
+	margin-top: 5rem;
+	background: transparent;
+	border: 2px solid #fff;
+	width: 10rem;
+	height: 4rem;
+	font-size: 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+	div {
+		@extend %transition-regular;
+		position: absolute;
+		width: 0;
+		height: 100%;
+		background: #fff;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+	p {
+		position: absolute;
+		margin-left: 1em;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		@extend %transition-regular;
+	}
+	&:hover {
+		div {
+			width: 100%;
+		}
+		p {
+			color: $background;
+		}
+	}
+	&:active {
+		div {
+			background: $background;
+		}
+		p {
+			color: #fff;
+		}
+	}
+}

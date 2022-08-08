@@ -1,13 +1,19 @@
 @import "../../mixins.scss";
+@import "../../variables.scss";
 
 .menu {
 	position: absolute;
-	top: 0;
+	top: 0.3em;
 	left: 105%;
 	background: transparent;
 	border: 2px solid #fff;
+	transform-origin: top;
+	animation: menu-animation 0.3s ease;
+	&.menuOff {
+		animation: menu-close 0.5s ease;
+	}
 	ul {
-		color: #000;
+		color: $background;
 		@include flex(column, center, center);
 		li {
 			button {
@@ -20,9 +26,31 @@
 				padding: 0.5em;
 				&:hover {
 					background: #fff;
-					color: #000;
+					color: $background;
 				}
 			}
 		}
+	}
+}
+
+@keyframes menu-animation {
+	from {
+		opacity: 0;
+		transform: scale(0%) translateX(-200%);
+	}
+	to {
+		opacity: 1;
+		transform: scale(100%) translateX(0%);
+	}
+}
+
+@keyframes menu-close {
+	from {
+		opacity: 1;
+		transform: scaleY(100%) translateX(0%);
+	}
+	to {
+		opacity: 0;
+		transform: scaleY(0%) translateX(-100%);
 	}
 }
