@@ -1,5 +1,8 @@
+@import "../variables.scss";
+
 .area {
 	position: absolute;
+	background: $background;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
