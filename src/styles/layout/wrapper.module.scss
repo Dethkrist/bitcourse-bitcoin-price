@@ -13,6 +13,7 @@
 }
 
 .footer {
+	position: relative;
 	@include flex(row, center, center);
 	height: 8vh;
 	color: #eee;
