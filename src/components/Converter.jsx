@@ -22,14 +22,14 @@ export default function Converter() {
 		const value = firstInput.current.value;
 		const calculate = value * selectedRate.rate_float;
 		const roundValue = Math.round(calculate * 100) / 100;
-		secondInput.current.value = roundValue.toLocaleString("en-US");
+		secondInput.current.value = roundValue;
 	};
 
 	const calculateReverse = () => {
 		const value = secondInput.current.value;
 		const calculate = value / selectedRate.rate_float;
 		const roundValue = Math.round(calculate * 100) / 100;
-		firstInput.current.value = roundValue.toLocaleString("en-US");
+		firstInput.current.value = roundValue;
 	};
 
 	return (

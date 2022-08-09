@@ -1,6 +1,6 @@
 import Converter from "./Converter";
 import DatePrice from "./DatePrice";
-import RowContainer from "./Layout/RowContainer";
+import RowContainer from "./layout/RowContainer";
 
 export default function CalculatePage() {
 	return (
