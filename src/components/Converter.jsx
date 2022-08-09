@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import converterStyle from "../styles/components/Converter.module.scss";
 import inputStyle from "../styles/components/elements/Input.module.scss";
@@ -22,14 +22,14 @@ export default function Converter() {
 		const value = firstInput.current.value;
 		const calculate = value * selectedRate.rate_float;
 		const roundValue = Math.round(calculate * 100) / 100;
-		secondInput.current.value = roundValue;
+		secondInput.current.value = roundValue.toLocaleString("en-US");
 	};
 
 	const calculateReverse = () => {
 		const value = secondInput.current.value;
 		const calculate = value / selectedRate.rate_float;
 		const roundValue = Math.round(calculate * 100) / 100;
-		firstInput.current.value = roundValue;
+		firstInput.current.value = roundValue.toLocaleString("en-US");
 	};
 
 	return (
