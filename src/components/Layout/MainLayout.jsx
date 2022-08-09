@@ -1,6 +1,6 @@
 import Head from "next/head";
-import mainStyle from "../../styles/layout/wrapper.module.scss";
-import backgroundStyle from "../../styles/layout/background.module.scss";
+import mainStyle from "../../src/styles/layout/wrapper.module.scss";
+import backgroundStyle from "../../src/styles/layout/background.module.scss";
 
 export default function MainLayout({ children, title }) {
 	return (

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import converterStyle from "../src/styles/components/Converter.module.scss";
-import inputStyle from "../src/styles/components/elements/Input.module.scss";
+import inputStyle from "../../src/styles/components/Converter.module.scss";
 
 export default function Converter() {
 	const firstInput = useRef();
