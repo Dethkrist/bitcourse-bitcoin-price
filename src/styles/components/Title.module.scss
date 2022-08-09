@@ -45,6 +45,12 @@
 	}
 }
 
+@media (max-width: 425px) {
+	.title {
+		font-size: 4em;
+	}
+}
+
 @keyframes text-hover {
 	0% {
 		transform: scale(100%);
