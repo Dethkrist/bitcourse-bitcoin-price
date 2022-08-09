@@ -13,6 +13,7 @@
 	box-sizing: border-box;
 	font-size: 20px;
 	text-transform: uppercase;
+	color: #fff;
 	cursor: pointer;
 	div {
 		@extend %transition-regular;
