@@ -14,6 +14,7 @@
 
 .footer {
 	position: relative;
+	background: transparent;
 	@include flex(row, center, center);
 	height: 8vh;
 	color: #eee;
