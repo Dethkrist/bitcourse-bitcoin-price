@@ -20,16 +20,24 @@ export default function Converter() {
 
 	const calculateValue = () => {
 		const value = firstInput.current.value;
-		const calculate = value * selectedRate.rate_float;
-		const roundValue = Math.round(calculate * 100) / 100;
-		secondInput.current.value = roundValue.toLocaleString("en-US");
+		if (isNaN(value)) {
+			secondInput.current.value = "Please, enter number!";
+		} else {
+			const calculate = value * selectedRate.rate_float;
+			const roundValue = Math.round(calculate * 100) / 100;
+			secondInput.current.value = roundValue.toLocaleString("en-US");
+		}
 	};
 
 	const calculateReverse = () => {
 		const value = secondInput.current.value;
-		const calculate = value / selectedRate.rate_float;
-		const roundValue = Math.round(calculate * 100) / 100;
-		firstInput.current.value = roundValue.toLocaleString("en-US");
+		if (isNaN(value)) {
+			firstInput.current.value = "Please, enter number!";
+		} else {
+			const calculate = value / selectedRate.rate_float;
+			const roundValue = Math.round(calculate * 100) / 100;
+			firstInput.current.value = roundValue.toLocaleString("en-US");
+		}
 	};
 
 	return (
