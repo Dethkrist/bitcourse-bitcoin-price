@@ -34,6 +34,14 @@
 	}
 }
 
+@media (max-width: 425px) {
+	.menu {
+		left: 45%;
+		background: $background;
+		z-index: 50;
+	}
+}
+
 @keyframes menu-animation {
 	from {
 		opacity: 0;
