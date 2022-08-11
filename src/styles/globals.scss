@@ -39,15 +39,10 @@ a {
 	box-sizing: border-box;
 }
 
-html {
-	color-scheme: dark;
-}
-@media (prefers-color-scheme: dark) {
-	body {
-		color: #fff;
-		font-family: "Roboto";
-		background: $background;
-		display: flex;
-		flex-direction: column;
-	}
+body {
+	color: #fff;
+	font-family: "Roboto";
+	background: $background;
+	display: flex;
+	flex-direction: column;
 }
