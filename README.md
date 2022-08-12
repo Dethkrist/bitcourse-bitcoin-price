@@ -17,7 +17,7 @@ For styling i've used Scss with all it features.
 
 Mainly i've deployed it to Vercel to be able to check how it looks.
 
-### So, you can check it [here](https://bitcourse-bitcoin-price-oan9tsx31-dethkrist.vercel.app/)
+### So, you can check it [here](bitcourse-bitcoin-price.vercel.app)
 
 Run the development server:
 
