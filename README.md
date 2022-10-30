@@ -11,8 +11,6 @@ It shows current price of Bitcoin for different currency, like:
 All information is taken from Coindesk API and stored in Redux store.
 Price is refreshing automatically every minute.
 
-That's because i've used frontend fetching instead of server-side.
-
 For styling i've used Scss with all it features.
 
 Mainly i've deployed it to Vercel to be able to check how it looks.
